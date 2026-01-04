@@ -1,0 +1,10 @@
+F:\repo\DueTick\obj\Debug\net6.0-windows\DueTick.csproj.AssemblyReference.cache
+F:\repo\DueTick\obj\Debug\net6.0-windows\Views\AddDeadlineDialog.baml
+F:\repo\DueTick\obj\Debug\net6.0-windows\Views\SettingsDialog.baml
+F:\repo\DueTick\obj\Debug\net6.0-windows\Views\WidgetWindow.baml
+F:\repo\DueTick\obj\Debug\net6.0-windows\Views\AddDeadlineDialog.g.cs
+F:\repo\DueTick\obj\Debug\net6.0-windows\Views\SettingsDialog.g.cs
+F:\repo\DueTick\obj\Debug\net6.0-windows\Views\WidgetWindow.g.cs
+F:\repo\DueTick\obj\Debug\net6.0-windows\App.g.cs
+F:\repo\DueTick\obj\Debug\net6.0-windows\DueTick_MarkupCompile.cache
+F:\repo\DueTick\obj\Debug\net6.0-windows\DueTick.g.resources
