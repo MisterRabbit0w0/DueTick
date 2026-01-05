@@ -34,10 +34,10 @@ jobs:
           **/bin/Release/net8.0/**
     
     - name: Pack build output
+      shell: pwsh
       run: |
         mkdir Release
-        powershell -Command "Compress-Archive`
-         -Path **/bin/Release/net8.0/* -DestinationPath Release/DueTick-$GITHUB_REF_NAME.zip"
+        Compress-Archive -Path ./bin/Release/net8.0/* -DestinationPath "Release/DueTick-${{ env.GITHUB_REF_NAME }}.zip"
     
     - name: Upload release artifact
       if: startsWith(github.ref, 'refs/tags/')
