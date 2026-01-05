@@ -60,24 +60,22 @@ namespace DueTick
             Icon trayIcon;
             try
             {
-                // Load the embedded icon.png as tray icon
-                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("DueTick.Resources.icon.png"))
+                // Load icon from WPF resources
+                var iconUri = new Uri("pack://application:,,,/DueTick;component/Resources/icon.png");
+                var streamInfo = Application.GetResourceStream(iconUri);
+                if (streamInfo != null)
                 {
-                    if (stream != null)
+                    using (var stream = streamInfo.Stream)
                     {
-                        using (var originalBitmap = new Bitmap(stream))
+                        using (var bitmap = new Bitmap(stream))
                         {
-                            // choose 64x64 mapping for high DPI support
-                            using (var resizedBitmap = new Bitmap(originalBitmap, new System.Drawing.Size(64, 64)))
-                            {
-                                trayIcon = Icon.FromHandle(resizedBitmap.GetHicon());
-                            }
+                            trayIcon = Icon.FromHandle(bitmap.GetHicon());
                         }
                     }
-                    else
-                    {
-                        trayIcon = SystemIcons.Application;
-                    }
+                }
+                else
+                {
+                    trayIcon = SystemIcons.Application;
                 }
             }
             catch
