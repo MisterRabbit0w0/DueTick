@@ -1,4 +1,5 @@
 /bin/*
 /obj/*
+/publish/*
 
 /Resources/icon_white.png
