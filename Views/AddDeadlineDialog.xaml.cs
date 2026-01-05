@@ -48,26 +48,26 @@ namespace DueTick.Views
         {
             if (string.IsNullOrWhiteSpace(TitleTextBox.Text))
             {
-                MessageBox.Show("Please enter a title.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                System.Windows.MessageBox.Show("Please enter a title.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
             if (!DueDatePicker.SelectedDate.HasValue)
             {
-                MessageBox.Show("Please select a due date.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                System.Windows.MessageBox.Show("Please select a due date.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
             if (!TimeSpan.TryParse(DueTimeTextBox.Text, out var time))
             {
-                MessageBox.Show("Please enter a valid time (HH:mm).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                System.Windows.MessageBox.Show("Please enter a valid time (HH:mm).", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
             var selectedItem = ReminderComboBox.SelectedItem as ReminderItem;
             if (selectedItem == null)
             {
-                MessageBox.Show("Please select a reminder time.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                System.Windows.MessageBox.Show("Please select a reminder time.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -76,7 +76,7 @@ namespace DueTick.Views
             // Validate that the due date is not in the past
             if (dueDate <= DateTime.Now)
             {
-                MessageBox.Show("The due date and time must be in the future.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                System.Windows.MessageBox.Show("The due date and time must be in the future.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 

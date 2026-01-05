@@ -1,4 +1,4 @@
-name: .NET Framework 4.8 Build
+name: .NET 8.0 Build
 
 on:
   push:
@@ -17,12 +17,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
+    
     - name: Setup .NET SDK
       uses: microsoft/setup-dotnet@v4
       with:
-        dotnet-version: '6.0.x'
-
+        dotnet-version: '8.0.x'
+    
     - name: Build solution
       run: dotnet build DueTick.sln --configuration Release
 
@@ -31,14 +31,14 @@ jobs:
       with:
         name: Build solution
         path : |
-          **/bin/Release/net48/**
+          **/bin/Release/net8.0/**
     
     - name: Pack build output
       run: |
         mkdir Release
         powershell -Command "Compress-Archive`
-         -Path **/bin/Release/net48/* -DestinationPath Release/DueTick-$GITHUB_REF_NAME.zip"
-        
+         -Path **/bin/Release/net8.0/* -DestinationPath Release/DueTick-$GITHUB_REF_NAME.zip"
+    
     - name: Upload release artifact
       if: startsWith(github.ref, 'refs/tags/')
       uses: actions/upload-artifact@v4

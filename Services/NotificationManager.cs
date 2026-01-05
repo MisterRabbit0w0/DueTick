@@ -30,7 +30,7 @@ namespace DueTick.Services
             }
             else
             {
-                MessageBox.Show($"Deadline Reminder: {deadline.Title}\nDue in {timeStr} at {deadline.DueDate:g}", "DueTick Reminder");
+                System.Windows.MessageBox.Show($"Deadline Reminder: {deadline.Title}\nDue in {timeStr} at {deadline.DueDate:g}", "DueTick Reminder");
             }
         }
     }
