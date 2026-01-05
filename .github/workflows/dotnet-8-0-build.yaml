@@ -35,12 +35,12 @@ jobs:
       run: |
         if (!(Test-Path "Release")) { New-Item -ItemType Directory -Path "Release" }
         
-        Compress-Archive -Path "./publish/*" -DestinationPath "Release/DueTick-${{ github.ref_name }}.zip" -Force
+        Compress-Archive -Path "./publish/*" -DestinationPath "Release/DueTick.zip" -Force
     
     - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
-        path: Release/DueTick-${{ github.ref_name }}.zip
+        path: Release/DueTick.zip
     
     - name: Upload release artifact
       if: startsWith(github.ref, 'refs/tags/')
